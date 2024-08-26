@@ -13,7 +13,7 @@
     <link rel="canonical" href="{{ request()->url() }}" />
     <link rel="alternate" hreflang="x-default" href="{{ request()->url() }}" />
     <link rel="alternate" hreflang="es" href="{{ request()->url() }}" />
-    {{-- <meta name="robots" content="noindex , nofollow" /> --}}
+    <meta name="robots" content="noindex , nofollow" />
 
     <meta name="google-site-verification" content="ZqCOq9Kx_XtHyjhePE2VDu_BnNX9evAHxp_U4zQ8yrQ" />
     <link rel="stylesheet" href="{{ asset('asset_files/frontend/css/style.css?v2.3.4') }}">
