@@ -7,9 +7,6 @@
                 Humanizar Texto es un humanizador de texto de IA gratis que te
                 ayuda a eliminar la detección de IA de tu contenido generado por ChatGPT, Gemini, Claude, etc.
             </p>
-            {{-- <p>{{ $content['slogan']['value'] ??
-                'Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quidem quam inventore repellendus Soluta totam praesentium ipsum nam repe.' }}
-            </p> --}}
         </div>
         <div class="tool container">
             <div class="topbar_wrapper">
@@ -80,6 +77,38 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="sm-container">
+        <div class="header_section">
+            <h2>How To Use Humanizar Text</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi consequatur cupiditate deleniti sint ipsum
+                dignissimos asperiores optio magni!</p>
+        </div>
+        <div class="uses">
+            <div class="use_img">
+                <img src="{{ asset('asset_files/frontend/images/use-image.svg') }}" alt="">
+            </div>
+            <div>
+                <ol>
+                    <li>
+                        <h3>1. Paste or Upload</h3>
+                        <p>Paste or upload the AI ​​generated text into the input box provided.</p>
+                    </li>
+                    <li>
+                        <h3>2. Click on Humanize Text</h3>
+                        <p>Click the "Humanize Text" button to start the process.</p>
+                    </li>
+                    <li>
+                        <h3>3. Analyze and Humanize</h3>
+                        <p>After that, Humanize Text analyzes AI text and starts humanizing it.</p>
+                    </li>
+                    <li>
+                        <h3>4. Copy or Download</h3>
+                        <p>When you're done humanizing your text, you can copy or download it from the output box.</p>
+                    </li>
+                </ol>
             </div>
         </div>
     </section>
