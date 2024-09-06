@@ -1,0 +1,83 @@
+body{
+    background-color: white;
+}
+
+.header_section{
+    max-width: 1280px;
+    text-align: center;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.header_section h1{
+    font-size: 38px;
+    font-weight: 600 !important;
+}
+
+.header_section p{
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+
+.tool{
+    display: flex;
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 40px;
+    gap: 10px;
+    width: 100%;
+}
+
+.tool  > div{
+    flex: 1;
+    border: 1px solid #d2d2d2;
+    min-height: 400px;
+    max-width: 50%;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 7px;
+}
+
+.upload_label {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.upload_label span{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.tool_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.convert{
+    font-size: 18px;
+    border-radius: 4px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: #be65a1;
+    color: white;
+    padding: 6px 50px;
+    margin: auto;
+    width: fit-content;
+    margin-top: 20px;
+}
+.output_sec{
+    overflow: hidden;
+}
+.output_sec textarea{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
