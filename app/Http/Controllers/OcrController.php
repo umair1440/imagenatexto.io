@@ -57,8 +57,10 @@ class OcrController extends Controller
                 Storage::delete($filePath);
 
                 // dd($driveFile->id);
-                info($driveFile->id);
-                return $this->processOCR2($driveFile->id);
+                return response()->json([
+                    "text" => $this->processOCR2($driveFile->id),
+                    'key' => $request->key
+                ]);
             }
         } catch (\Throwable $th) {
             dd($th->getMessage());
