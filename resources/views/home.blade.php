@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ asset('assets_files/frontend/css/style.css?v1.0') }}">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <meta name="robots" content="noindex , nofollow" />
+
 </head>
 
 <body>
@@ -43,7 +45,7 @@
             </div>
             <div class="output_results d-none">
                 {{-- <div class=""> --}}
-                    {{-- <div class="result_card">
+                {{-- <div class="result_card">
                         <div class="result_data">
                             <div>
                                 <img src="{{ asset('uploads/image.png') }}" alt="">
