@@ -14,31 +14,29 @@ class OcrController extends Controller
 {
     public function uploadFile(Request $request)
     {
-        try {
-            //code...
             $client = GoogleService::getClient();
             $folderId = '1Lunz3DMf6jQiqFJH8ACBPifU7isj0Pbw';
 
-            // // Now you can use the client to interact with the Drive API
             $driveService = new Google_Service_Drive($client);
 
             $fileMetadata = new Google_Service_Drive_DriveFile([
                 'name' => 'myimageishere123.png',
-                'mimeType' => 'application/vnd.google-apps.document' // Set mime type for Google Doc
+                'mimeType' => 'application/vnd.google-apps.document'
             ]);
 
-            $base64Image = $request->input('image'); // Get the base64 image from the request
+            $base64Image = $request->input('image');
 
-            // Extract the actual base64 string (without the metadata)
-            if (preg_match('/^data:image\/(?<type>.+);base64,(?<data>.+)$/', $base64Image, $matches)) {
+            if (preg_match('/^data:image\/(?<type>[a-zA-Z0-9]+);base64,(?<data>[a-zA-Z0-9\/+=]+)$/', $base64Image, $matches)) {
                 $imageType = $matches['type'];
                 $imageData = base64_decode($matches['data']);
 
                 $fileName = 'ocr.' . $imageType; // Adjust the filename as needed
                 $filePath = 'public/' . $fileName;
 
+
                 // Store the image in public storage
                 Storage::put($filePath, $imageData);
+
 
                 // Prepare file metadata for Google Drive
                 $fileMetadata = new Google_Service_Drive_DriveFile([
@@ -56,15 +54,13 @@ class OcrController extends Controller
                 // Delete the file from public storage after uploading
                 Storage::delete($filePath);
 
-                // dd($driveFile->id);
                 return response()->json([
                     "text" => $this->processOCR2($driveFile->id),
                     'key' => $request->key
                 ]);
+            }else{
+                return 'File Issues';
             }
-        } catch (\Throwable $th) {
-            dd($th->getMessage());
-        }
     }
 
     public function processOCR2($fileId)
