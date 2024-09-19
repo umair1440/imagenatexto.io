@@ -82,7 +82,7 @@
         </p>
     </section>
 
-    <script src="{{ asset('assets_files/frontend/script/script.js?v1.0') }}"></script>
+    <script src="{{ asset('assets_files/frontend/script/script.js?v1.1') }}"></script>
 </body>
 
 </html>

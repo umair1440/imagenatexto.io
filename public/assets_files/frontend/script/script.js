@@ -32,13 +32,13 @@ $(".convert_all").on('click', function () {
             </div>
             <div class="result_card_options">
                 <button>
-                    <img src="${window.location.origin}/assets_files/frontend/images/copy-icon.svg" alt="">
+                    <img src="${window.location.origin}/assets_files/frontend/images/copy-icon.svg?v1.0" alt="">
                 </button>
                 <button>
-                    <img src="${window.location.origin}/assets_files/frontend/images/download-icon.svg" alt="">
+                    <img src="${window.location.origin}/assets_files/frontend/images/download-icon.svg?v1.0" alt="">
                 </button>
                 <button>
-                    <img src="${window.location.origin}/assets_files/frontend/images/expand-icon.svg" alt="">
+                    <img src="${window.location.origin}/assets_files/frontend/images/expand-icon.svg?v1.0" alt="">
                 </button>
             </div>
         </div>`;
