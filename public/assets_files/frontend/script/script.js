@@ -20,14 +20,25 @@ $(".convert_all").on('click', function () {
                 <div>
                     <img src="${imageData}" alt="">
                 </div>
-                <textarea name="" id="" cols="30" rows="10">Processing...</textarea>
+                <div class="shimer_effect">
+                    <div class="shimer_wrapper">
+                        <span class="stroke animate"></span>
+                        <span class="stroke animate"></span>
+                        <span class="stroke animate"></span>
+                        <span class="stroke animate"></span>
+                    </div>
+                </div>
+                <textarea style="display:none" name="" id="" cols="30" rows="10">Processing...</textarea>
             </div>
             <div class="result_card_options">
                 <button>
-                    <img src="${window.location.origin}/assets_files/frontend/images/close-icon.svg" alt="">
+                    <img src="${window.location.origin}/assets_files/frontend/images/copy-icon.svg" alt="">
                 </button>
                 <button>
-                    <img src="${window.location.origin}/assets_files/frontend/images/close-icon.svg" alt="">
+                    <img src="${window.location.origin}/assets_files/frontend/images/download-icon.svg" alt="">
+                </button>
+                <button>
+                    <img src="${window.location.origin}/assets_files/frontend/images/expand-icon.svg" alt="">
                 </button>
             </div>
         </div>`;
@@ -44,7 +55,8 @@ $(".convert_all").on('click', function () {
                     _token: $('meta[name="_token"]').attr('content')
                 }
             }).then(function (response) {
-                $(`.result_${response.key} textarea`).val(response.text);
+                $(`.result_${response.key} textarea`).val((response.text).trim()).css('display', 'block');
+                $(`.result_${response.key} .shimer_effect`).addClass('d-none');
                 // $('.result_container').append(template);
             }).catch(function (error) {
                 console.error('Error:', error);

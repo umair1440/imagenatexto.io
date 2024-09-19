@@ -1,0 +1,48 @@
+<div class="header_section">
+    <h1>Image to text</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta impedit, ipsum amet modi fuga, eum
+        error numquam ab asperiores vel laboriosam officia reiciendis repellendus voluptatem nulla iste quas
+        tenetur?</p>
+</div>
+<section class="tool_wrapper">
+    <div class="tool">
+        <div class="input_sec expand_input">
+            <label for="uploadFile" class="uploadSection">
+                <div class="upload_label">
+                    <img src="public/assets_files/frontend/images/upload-icon.svg" alt="">
+                    <span class="drop_text">Drop, Upload or Paste image</span>
+                    <span class="supported_files_text">Supported formates: JPG, PNG, GIF, JFIF (JPEG), HEIC,
+                        PDF</span>
+                </div>
+                <input type="file" accept=".jpg, .png, .jpeg" multiple name="file" hidden id="uploadFile">
+            </label>
+        </div>
+        <div class="output_sec d-none">
+            <div class="image_card_wrapper">
+            </div>
+            <div class="output__options">
+                <button class="clear_all">Clear All</button>
+                <button class="convert_all">Convert</button>
+            </div>
+        </div>
+        <div class="output_results d-none">
+            <div class="result_data">
+                <div>
+                    <img src="/public/uploads/image.png" alt="">
+                </div>
+                <textarea name="" id="" cols="30"
+                    rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi animi error minima esse culpa accusantium quasi, harum totam eveniet? Assumenda?</textarea>
+            </div>
+            <div class="result_card_options">
+                <button>
+                    <!-- <img src="{{ asset('/') }}" alt=""> -->
+                    <!-- <img src="public/assets_files/frontend/images/close-icon.svg'" alt=""> -->
+                </button>
+                <button>
+                    <!-- <img src="{{ asset('/assets_files/frontend/images/close-icon.svg') }}" alt=""> -->
+                    <img src="public/assets_files/frontend/images/close-icon.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
