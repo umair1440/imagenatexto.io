@@ -46,7 +46,7 @@ body {
     margin: auto;
     gap: 10px;
     width: 80vw;
-    min-height: 420px;
+    min-height: 380px;
     background-color: #fff;
     border-radius: 22px;
 }
@@ -108,7 +108,7 @@ body {
 }
 
 .input_sec {
-    min-height: 420px;
+    min-height: 380px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,7 +136,9 @@ body {
 }
 
 .uploadSection {
-    border: 2px solid #be65a1;
+    border-width: 2px;
+    border-color: #be65a1;
+    border-style: dashed;
     width: 100%;
     height: 100%;
     border-radius: 12px;
@@ -291,6 +293,7 @@ body {
         width: 20%;
     }
 }
+
 .shimer_wrapper {
     width: 0px;
     animation: fullView 0.5s forwards linear;
