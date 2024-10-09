@@ -26,12 +26,12 @@ p {
     display: none !important;
 }
 
-body{
+body {
     position: relative;
 }
+
 .bg_wrapper {
     width: 100%;
-    /* background-color: #e5e5f7; */
     position: absolute;
     top: 0px;
     border: 0px;
@@ -70,14 +70,32 @@ body{
     width: 80vw;
     min-height: 400px;
     max-height: 440px;
-    background-color: #fff;
-    border-radius: 22px;
+    /* background-color: #fff; */
+
 }
 
 .tool_wrapper {
     flex-direction: column;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     margin-top: 40px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.shape {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: -5;
+    border-radius: 100%;
+    top: 214px;
+    left: 50%;
+    width: 130px;
+    height: 62vh;
+    transform: translateX(-50%);
+    BORDER-RADIUS: 20px;
+    background-color: #f3edff;
+    width: 83vw;
 }
 
 .tool_wrapper>p {
@@ -121,7 +139,7 @@ body{
 .convert {
     font-size: 18px;
     border-radius: 4px;
-    background-color: #be65a1;
+    background-color: rgb(94 77 255);
     color: white;
     padding: 6px 50px;
     margin: auto;
@@ -159,7 +177,7 @@ body{
 
 .uploadSection {
     border-width: 2px;
-    border-color: #be65a1;
+    border-color: rgb(94 77 255);
     border-style: dashed;
     width: 100%;
     height: 100%;
@@ -244,6 +262,8 @@ body{
     display: flex;
     padding: 12px;
     gap: 20px;
+    padding-bottom: 0px;
+    margin-bottom: -10px;
 }
 
 .output__options button {
@@ -263,7 +283,7 @@ body{
 }
 
 .output__options .convert_all {
-    background-color: #be65a1;
+    background-color: rgb(94 77 255);
     color: #fff;
 }
 
@@ -272,6 +292,7 @@ body{
 .output_results {
     padding: 10px;
     width: 100%;
+    overflow-y: auto;
 }
 
 .result_card {
@@ -373,7 +394,7 @@ body{
     gap: 7px;
 
     button {
-        background: #be65a1;
+        background: rgb(94 77 255);
         padding: 5px;
         border-radius: 5px;
     }
@@ -383,12 +404,39 @@ body{
     }
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(94 77 255);
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(94 77 255);
+}
+
+/* Custom Scrollbar for Firefox */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(94 77 255) #f1f1f1;
+}
+
+
 ::-webkit-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(94 77 255) #eee;
     width: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #be65a1;
+    background-color: rgb(94 77 255);
     border-radius: 10px;
     border: 2px solid #f1f1f1;
 }
@@ -404,13 +452,26 @@ body{
 }
 
 .result_data textarea::-webkit-scrollbar-thumb {
-    background-color: #be65a1;
+    background-color: rgb(94 77 255);
 }
+
+
 
 .uses h3 {
     font-size: 16px !important;
 }
 
+.feature_card,
+.faq_card,
+.where__cards>li,
+.uses_card {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.feature_card{
+    margin-bottom: 20px;
+
+}
 .feature_card>div:nth-child(1) {
     min-width: 120px;
     height: 120px;
@@ -418,7 +479,7 @@ body{
     place-items: center;
     font-size: 38px;
     font-weight: 600 !important;
-    color: #be65a1;
+    color: rgb(94 77 255);
     position: relative;
     overflow: hidden;
 }
@@ -429,7 +490,7 @@ body{
     width: 80px;
     height: 80px;
     position: absolute;
-    border: 2px solid #be65a1;
+    border: 2px solid rgb(94 77 255);
     border-radius: 100%;
 }
 
@@ -444,7 +505,7 @@ body{
 }
 
 .working div {
-    background-color: #be65a1;
+    background-color: rgb(94 77 255);
     flex: 1;
     padding: 20px;
     text-align: center;
@@ -497,6 +558,6 @@ body{
     font-size: 18px !important;
 }
 
-footer svg{
+footer svg {
     max-width: 30px;
 }

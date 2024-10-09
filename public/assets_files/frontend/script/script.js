@@ -15,7 +15,7 @@ $(".convert_all").on('click', function () {
         reader.onloadend = function () {
             var imageData = reader.result;
 
-            var template = `<div class="result_card">
+            var template = `<div class="result_card custom-scrollbar">
             <div class="result_data result_${key}">
                 <div>
                     <img src="${imageData}" alt="">
