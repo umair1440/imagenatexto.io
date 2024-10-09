@@ -56,7 +56,7 @@
                 <div class="input_sec expand_input">
                     <label for="uploadFile" class="uploadSection">
                         <div class="upload_label">
-                            <img src="{{ asset('assets_files/frontend/images/upload-icon.svg') }}" alt="">
+                            <img src="{{ asset('assets_files/frontend/images/upload-icon.svg?v1.0') }}" alt="">
                             <span class="drop_text">Drop, Upload or Paste image</span>
                             <span class="supported_files_text">Supported formates: JPG, PNG, GIF, JFIF (JPEG), HEIC,
                                 PDF</span>
