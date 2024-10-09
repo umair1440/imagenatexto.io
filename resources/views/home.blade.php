@@ -8,7 +8,7 @@
     <meta name="_token" content="{{ csrf_token() }}">
     <title>Image to text</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{ asset('assets_files/frontend/css/style.css?v1.5') }}">
+    <link rel="stylesheet" href="{{ asset('assets_files/frontend/css/style.css?v1.6') }}">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <meta name="robots" content="noindex , nofollow" />
