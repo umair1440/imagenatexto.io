@@ -60,8 +60,11 @@
 
 
                         <label for="inputPassword5" class="form-label"><small>Details</small></label>
-                        <div class="quill-editor-full">
-                        </div>
+                        {{-- <div class="quill-editor-full">
+                        </div> --}}
+
+                        <textarea name="" class="textarea" cols="30" rows="10"></textarea>
+
                         <!-- End TinyMCE Editor -->
                         <div class="">
                             <button type="submit" class="btn btn-primary">Submit</button>

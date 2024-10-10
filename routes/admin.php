@@ -18,7 +18,7 @@ Route::middleware('guest')->group(function () {
 
 
 Route::group(['name' => 'adminRoutes'], function () {
-    Route::get('admin/dashboard', [ToolController::class, 'index'])->name('admin_panel');
+    Route::get('admin/dashboard', [ToolController::class, 'index'])->name('dashboard');
     /* tool */
     Route::controller(ToolController::class)->name('tool.')->prefix('admin/dashboard')->group(function () {
         Route::get('add-tool', 'create')->name('add');

@@ -36,7 +36,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-    <link href="{{ asset('asset_files/admin/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset_files/admin/css/style.css?v1.0') }}" rel="stylesheet">
 
 </head>
 
@@ -59,10 +59,10 @@
     <script src="{{ asset('asset_files/admin/js/simple-datatables.js') }}"></script>
     {{-- <script src="{{ asset('asset_files/admin/js/tinymce.min.js') }}"></script> --}}
     <script src="{{ asset('asset_files/admin/js/validate.js') }}"></script>
-    <script src="{{ asset('asset_files/admin/js/dashboard.js?v1.2') }}
-                        "></script>
-    <script src="{{ asset('asset_files/admin/js/admin.js?v1.4') }}
-                        "></script>
+    <script src="{{ asset('asset_files/admin/js/dashboard.js?v1.4') }}
+                            "></script>
+    <script src="{{ asset('asset_files/admin/js/admin.js?v1.6') }}
+                            "></script>
 
 </body>
 

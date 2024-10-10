@@ -1,5 +1,10 @@
 @extends('admin.admin')
 @section('content')
+    <style>
+        .tox.tox-tinymce {
+            max-height: 300px !important;
+        }
+    </style>
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -59,38 +64,59 @@
                             <label class="form-label"><small>Parent</small></label>
                             <select id="inputState" class="p-2 form-select" name="tool_parent">
                                 <option value="0">This is Parent</option>
-                                {{-- <option>false</option> --}}
                             </select>
-
-                            {{-- {"":{"type":"inputField","value":null}} --}}
-
-
                         </div>
                         <h4 class="mt-5">Content:</h4>
-                        <div class="content__tags ">
+                        <div class="content__tags">
                             @php
                                 $content = json_decode($tool['tool_content'], true);
                             @endphp
                             @foreach ($content as $key => $element)
                                 @if ($element['type'] == 'inputField')
-                                    <div class="row">
+                                    <div class="row flex gap-3">
                                         <input type="text" value="inputField" hidden name="inputType[]">
+                                        <button class="btn col-md-2  btn-danger w-fit"
+                                            style="width: fit-content; height: fit-content" type="button">
+                                            X
+                                        </button>
+
                                         <div class="col-md-3">
                                             <input type="text" value="{{ $key }}" name="contentKey[]"
                                                 class="p-2 form-control" placeholder="Key">
                                         </div>
-                                        <div class="col-md-9 mb-4">
+                                        <div class="col-md-8 mb-4">
                                             <input type="text" value="{{ $element['value'] }}" name="contentValue[]"
                                                 class="form-control p-2" placeholder="Value">
                                         </div>
                                     </div>
+                                @elseif($element['type'] == 'richTextField')
+                                    <div class="row">
+                                        <button class="btn col-md-2 flex gap-3 btn-danger w-fit"
+                                            style="width: fit-content; height: fit-content" type="button">
+                                            X
+                                        </button>
+                                        <input type="text" hidden value="richTextField" name="inputType[]">
+                                        <div class="col-md-3 mt-${margin}">
+                                            <input type="text" class="p-2 form-control" name="contentKey[]"
+                                                value="{{ $key }}" placeholder="Key">
+                                        </div>
+                                        <div class="col-md-8 mb-4 mt-${margin}">
+                                            <textarea name="contentValue[]" class="form-control textarea" cols="30" rows="2"
+                                                placeholder="Rich Text">{{ $element['value'] }}</textarea>
+                                        </div>
+                                    </div>
                                 @else
-                                    <div class="row"><input type="text" hidden value="textField" name="inputType[]">
+                                    <div class="row"><input type="text" hidden value="textField"
+                                            name="inputType[]">
+                                        <button class="btn col-md-2 btn-danger flex gap-3 w-fit"
+                                            style="width: fit-content; height: fit-content" type="button">
+                                            X
+                                        </button>
                                         <div class="col-md-3">
                                             <input type="text" value="{{ $key }}" class="p-2 form-control"
                                                 name="contentKey[]" placeholder="Key">
                                         </div>
-                                        <div class="col-md-9 mb-4 mt-${margin}">
+                                        <div class="col-md-8 mb-4 mt-${margin}">
                                             <textarea class="form-control" name="contentValue[]" cols="10" rows="3" placeholder="Value">{{ $element['value'] }}</textarea>
                                         </div>
                                     </div>
@@ -98,11 +124,29 @@
                             @endforeach
                         </div>
                         <div class="add__new__tags row mt-5">
-                            <div class="col-md-9">
+                            <div class="col-md-9 flex gap-6 selection_container"
+                                style="display: flex;align-items: center; justify-content: center: gap: 20px !important;">
+                                <label for="input_sec" class="radio-container">
+                                    <input type="radio" id="input_sec" name="selection" value="input" checked>
+                                    <span class="checkmark">Input</span>
+
+                                </label>
+                                <label for="textarea_sec" class="radio-container">
+                                    <input type="radio" name="selection" id="textarea_sec" value="textarea">
+                                    <span class="checkmark">Textarea</span>
+                                </label>
+                                <label for="editor_sec" class="radio-container">
+                                    <input type="radio" name="selection" id="editor_sec" value="editor">
+                                    <span class="checkmark">Editor</span>
+                                </label>
+
+                                {{-- <input type="textarea">
+                                <input type="editor">
                                 <select id="content__row__type" class="p-2 form-select">
                                     <option selected value="input">Input</option>
                                     <option value="textarea">Textarea</option>
-                                </select>
+                                    <option value="editor">Rich Editor</option>
+                                </select> --}}
                             </div>
                             <div class="col-md-3">
                                 <button type="button" class="py-2 w-100 btn btn-primary" id="add__content__row"

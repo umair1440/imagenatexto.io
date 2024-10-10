@@ -76,6 +76,7 @@
                                 <select id="content__row__type" class="p-2 form-select">
                                     <option selected value="input">Input</option>
                                     <option value="textarea">Textarea</option>
+                                    <option value="editor">Rich Editor</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
