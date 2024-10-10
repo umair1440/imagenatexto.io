@@ -1,23 +1,25 @@
-$(".convert_all").on('click', function () {
-    var uploadedImages = $('#uploadFile')[0].files;
-    $(".convert").text('converting...');
-    if (!uploadedImages) {
-        console.error("No file selected.");
-        return;
-    }
+$(document).ready(function () {
 
-    $(".input_sec, .output_sec").addClass('d-none');
-    $(".output_results").removeClass('d-none')
-    let uploadPromises = [];
+    $(".convert_all").on('click', function () {
+        var uploadedImages = $('#uploadFile')[0].files;
+        $(".convert").text('converting...');
+        if (!uploadedImages) {
+            console.error("No file selected.");
+            return;
+        }
 
-    Object.values(uploadedImages).forEach((file, key) => {
-        var reader = new FileReader();
-        reader.onloadend = function () {
-            var imageData = reader.result;
+        $(".input_sec, .output_sec").addClass('d-none');
+        $(".output_results").removeClass('d-none')
+        let uploadPromises = [];
 
-            var template = `<div class="result_card custom-scrollbar">
+        Object.values(uploadedImages).forEach((file, key) => {
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                var imageData = reader.result;
+
+                var template = `<div class="result_card custom-scrollbar">
             <div class="result_data result_${key}">
-                <div>
+                <div class="image__wrapper">
                     <img src="${imageData}" alt="">
                 </div>
                 <div class="shimer_effect">
@@ -28,70 +30,70 @@ $(".convert_all").on('click', function () {
                         <span class="stroke animate"></span>
                     </div>
                 </div>
-                <textarea style="display:none" name="" id="" cols="30" rows="10">Processing...</textarea>
+                <textarea style="display:none" class="custom-scrollbar" >Processing...</textarea>
             </div>
             <div class="result_card_options">
-                <button>
+                <button class="copy__btn">
                     <img src="${window.location.origin}/asset_files/frontend/images/copy-icon.svg?v1.0" alt="">
                 </button>
-                <button>
+                <button class="download__btn">
                     <img src="${window.location.origin}/asset_files/frontend/images/download-icon.svg?v1.0" alt="">
                 </button>
-                <button>
+                <button class="expand__btn">
                     <img src="${window.location.origin}/asset_files/frontend/images/expand-icon.svg?v1.0" alt="">
                 </button>
             </div>
         </div>`;
 
-            $(".output_results").prepend(template);
+                $(".output_results").prepend(template);
 
-            // Push each AJAX call into the promises array
-            let uploadPromise = $.ajax({
-                url: '/upload',
-                type: 'POST',
-                data: {
-                    image: imageData,
-                    key: key,
-                    _token: $('meta[name="_token"]').attr('content')
-                }
-            }).then(function (response) {
-                $(`.result_${response.key} textarea`).val((response.text).trim()).css('display', 'block');
-                $(`.result_${response.key} .shimer_effect`).addClass('d-none');
-                // $('.result_container').append(template);
-            }).catch(function (error) {
-                console.error('Error:', error);
-            });
+                // Push each AJAX call into the promises array
+                let uploadPromise = $.ajax({
+                    url: '/upload',
+                    type: 'POST',
+                    data: {
+                        image: imageData,
+                        key: key,
+                        _token: $('meta[name="_token"]').attr('content')
+                    }
+                }).then(function (response) {
+                    $(`.result_${response.key} textarea`).val((response.text).trim()).css('display', 'block');
+                    $(`.result_${response.key} .shimer_effect`).addClass('d-none');
+                    // $('.result_container').append(template);
+                }).catch(function (error) {
+                    console.error('Error:', error);
+                });
 
-            uploadPromises.push(uploadPromise);
-        };
+                uploadPromises.push(uploadPromise);
+            };
 
-        reader.readAsDataURL(file);
-    });
-
-    // Handle all promises individually and show results as they resolve
-    Promise.allSettled(uploadPromises).then(results => {
-        results.forEach((result, index) => {
-            if (result.status === "fulfilled") {} else {}
+            reader.readAsDataURL(file);
         });
+
+        // Handle all promises individually and show results as they resolve
+        Promise.allSettled(uploadPromises).then(results => {
+            results.forEach((result, index) => {
+                if (result.status === "fulfilled") {} else {}
+            });
+        });
+
     });
 
-});
 
+    $("#uploadFile").on('change', function () {
+        // $(".input_sec").removeClass('expand_input');
+        $(".output_sec").removeClass('d-none');
+        $(".input_sec").animate({
+            width: "200px"
+        }, 100);
 
-$("#uploadFile").on('change', function () {
-    // $(".input_sec").removeClass('expand_input');
-    $(".output_sec").removeClass('d-none');
-    $(".input_sec").animate({
-        width: "200px"
-    }, 100);
-
-    setTimeout(() => {
-        var uploadedImages = $(this)[0].files;
-        Object.values(uploadedImages).forEach((file, key) => {
-            setTimeout(() => {
-                var reader = new FileReader();
-                reader.onloadend = function (e) {
-                    var image = `<div class="image_card">
+        setTimeout(() => {
+            var uploadedImages = $(this)[0].files;
+            Object.values(uploadedImages).forEach((file, key) => {
+                setTimeout(() => {
+                    var reader = new FileReader();
+                    reader.onloadend = function (e) {
+                        var image = `<div class="image_card">
                 <div>
                     <div>
                         <img src="${e.currentTarget.result}" alt="">
@@ -105,10 +107,70 @@ $("#uploadFile").on('change', function () {
                     <img src="${window.location.origin}/asset_files/frontend/images/close-icon.svg" alt="">
                 </button>
             </div>`;
-                    $(".image_card_wrapper").prepend(image);
-                }
-                reader.readAsDataURL(file);
-            }, 100 * key);
+                        $(".image_card_wrapper").prepend(image);
+                    }
+                    reader.readAsDataURL(file);
+                }, 100 * key);
+            });
+        }, 100);
+    });
+
+    $(document).on('click', '.copy__btn', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        $(this).addClass('active');
+        setTimeout(() => {
+            $(this).removeClass('active');
+        }, 1000);
+        var container_data = $(this).closest('.result_card').find('textarea').val();
+        navigator.clipboard.writeText(container_data).then(function () {}).catch(function (error) {
+            console.error("Failed to copy text: ", error);
         });
-    }, 100);
-})
+    });
+
+    $(document).on('click', '.download__btn', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var textContent = $(this).closest('.result_card').find('textarea').val();
+        $.ajax({
+            type: "POST",
+            url: window.location.origin + '/generateDoc',
+            data: {
+                text: textContent,
+                _token: $('meta[name="_token"]').attr('content')
+            },
+            success: function (data) {
+                var blob = new Blob([data]);
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = "result.doc";
+                link.click();
+            }
+        });
+    });
+
+    $(document).on('click', '.expand__btn', function (event) {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).closest('.result_card').removeClass('active');
+            $(this).closest('.result_card').find('textarea').animate({
+                height: '105px'
+            });
+        } else {
+            $(this).closest('.result_card').find('textarea').animate({
+                height: $(this).closest('.result_card').find('textarea')[0].scrollHeight + 'px'
+            });
+            $(this).addClass('active');
+            $(this).closest('.result_card').addClass('active');
+        }
+    });
+
+    $(".clear_all").on('click', function(){
+        $(".image_card_wrapper").html('');
+        $(".output_sec").addClass('d-none');
+        $(".input_sec").animate({
+            width: "100%"
+        }, 100);
+    });
+
+});

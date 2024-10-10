@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\OcrController;
+use App\Http\Controllers\FilesHandleConroller;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,6 +37,7 @@ Route::get('terms', [FrontendController::class, 'terms'])->name('terms-and-condi
 Route::get('policy', [FrontendController::class, 'policy'])->name('privacy-policy');
 Route::post('/upload', [OcrController::class, 'uploadFile']);
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
+Route::post('generateDoc', [FilesHandleConroller::class, 'generateDoc']);
 
 
 Route::get('blog', [FrontendController::class, 'blogs'])->name('blogs');

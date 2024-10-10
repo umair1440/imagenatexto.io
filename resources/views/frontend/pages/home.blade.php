@@ -10,7 +10,7 @@
                 error numquam ab asperiores vel laboriosam officia reiciendis repellendus voluptatem nulla iste quas
                 tenetur?</p>
         </div>
-        <div class="shape"></div>
+        {{-- <div class="shape"></div> --}}
         <div class="tool_wrapper">
             <div class="tool">
                 <div class="input_sec expand_input">

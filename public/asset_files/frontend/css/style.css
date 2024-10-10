@@ -300,16 +300,76 @@ body {
     border: 1px solid #eee;
     border-radius: 7px !important;
     overflow: hidden;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     box-shadow: rgb(0 0 0 / 3%) 0px 4px 12px;
     min-height: 90px;
-    max-height: 140px;
+    max-height: 160px;
     width: 100%;
     padding: 20px !important;
     gap: 10px;
     margin-bottom: 10px !important;
 }
+
+.result_card.active {
+    max-height: fit-content !important;
+}
+
+/* .result_card.active .result_data textarea{
+    height: 100%;
+} */
+
+.download__btn,
+.expand__btn,
+.copy__btn {
+    position: relative;
+}
+
+.download__btn::before,
+.expand__btn::before,
+.copy__btn::before {
+    position: absolute;
+    background-color: #5e4dffff;
+    color: #fff;
+    font-size: 12px;
+    right: 110%;
+    padding: 3px 5px;
+    border-radius: 2px;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.download__btn::before {
+    content: 'Download';
+}
+
+.expand__btn::before {
+    content: 'Expand';
+}
+
+.expand__btn.active::before {
+    content: 'Shrink';
+}
+
+
+.copy__btn::before {
+    content: 'Copy';
+}
+
+.copy__btn.active::before {
+    content: 'Copied';
+}
+
+.download__btn:hover::before,
+.expand__btn:hover::before,
+.copy__btn:hover::before {
+    display: block;
+}
+
+
 
 .shimer_effect {
     width: 100%;
@@ -368,16 +428,23 @@ body {
 
 .result_data {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     gap: 20px;
 }
 
+.image__wrapper {
+    min-width: 120px;
+    height: 120px;
+    border: 1px solid #eee;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+
 .result_data img {
     width: 120px;
-    height: 120px;
-    object-fit: cover;
-    position: center;
+    max-height: 120px;
 }
 
 .result_data textarea {
@@ -562,4 +629,43 @@ body {
 
 footer svg {
     max-width: 30px;
+}
+
+@media (max-width: 1024px) {
+
+    .tool_wrapper,
+    .tool {
+        min-height: auto;
+        max-height: fit-content;
+    }
+
+    .tool {
+        max-height: auto;
+        flex-direction: column;
+        min-height: auto;
+        max-height: fit-content;
+    }
+
+    .input_sec {
+        min-height: 280px;
+        min-width: 100% !important;
+    }
+
+    .uploadSection {
+        min-height: 250px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .output_sec {
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .output__options {
+        padding-bottom: 12px;
+        margin-bottom: 10px !important;
+    }
 }
