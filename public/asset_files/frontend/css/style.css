@@ -669,3 +669,53 @@ footer svg {
         margin-bottom: 10px !important;
     }
 }
+
+@media (max-width: 768px) {
+
+    .tool_wrapper,
+    .tool {
+        width: 95vw;
+    }
+
+    .upload_label span {
+        text-align: center;
+    }
+
+    .tool_wrapper>p {
+        font-size: 12px !important;
+    }
+
+    .supported_files_text {
+        font-size: 14px !important;
+        max-width: 80%;
+    }
+
+    .drop_text {
+        font-size: 16px !important;
+    }
+
+    .image_card * {
+        font-size: 14px !important;
+
+    }
+
+    .image__wrapper {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+
+    .image__wrapper img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+
+    .result_data textarea{
+        font-size: 14px !important;
+    }
+
+    .result_card{
+        max-height: 125px !important;
+    }
+}

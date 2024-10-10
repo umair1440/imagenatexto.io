@@ -1,5 +1,7 @@
 $(document).ready(function () {
-
+function getLimitChar(inputString, numCharacters) {
+    return inputString.slice(0, numCharacters);
+}
     $(".convert_all").on('click', function () {
         var uploadedImages = $('#uploadFile')[0].files;
         $(".convert").text('converting...');
@@ -99,7 +101,7 @@ $(document).ready(function () {
                         <img src="${e.currentTarget.result}" alt="">
                     </div>
                     <div>
-                        <p>${file.name}</p>
+                        <p>${getLimitChar(file.name, 20)}</p>
                         <span>${(file.size / (1024 * 1024)).toFixed(2)}MB</span>
                     </div>
                 </div>
