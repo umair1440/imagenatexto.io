@@ -2,15 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\Auth\LoginController;
-
-
-
-
-
+use App\Http\Controllers\OcrController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -40,7 +34,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('contact', [FrontendController::class, 'contacts'])->name('contact-us');
 Route::get('terms', [FrontendController::class, 'terms'])->name('terms-and-conditions');
 Route::get('policy', [FrontendController::class, 'policy'])->name('privacy-policy');
-
+Route::post('/upload', [OcrController::class, 'uploadFile']);
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
 
