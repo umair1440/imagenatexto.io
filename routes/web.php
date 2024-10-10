@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 
 
@@ -37,16 +37,15 @@ require __DIR__.'/auth.php';
 
 require __DIR__ . '/admin.php';
 Route::get('/', [FrontendController::class, 'index'])->name('home');
-Route::get('contacto', [FrontendController::class, 'contacts'])->name('contact-us');
-Route::get('terminos-y-condiciones', [FrontendController::class, 'terms'])->name('terms-and-conditions');
-Route::get('politica-de-privacidad', [FrontendController::class, 'policy'])->name('privacy-policy');
+Route::get('contact', [FrontendController::class, 'contacts'])->name('contact-us');
+Route::get('terms', [FrontendController::class, 'terms'])->name('terms-and-conditions');
+Route::get('policy', [FrontendController::class, 'policy'])->name('privacy-policy');
 
 Route::post('contact', [ContactController::class, 'store'])->name('contact.store');
 
 
 Route::get('blog', [FrontendController::class, 'blogs'])->name('blogs');
 Route::get('blog/{slug}', [FrontendController::class, 'blog'])->name(('blog.single'));
-Route::post('humanize_request', [AjaxController::class, 'rephrase'])->name('rephrase');
 
 
 // Route::group(['prefix' => 'admin'], function () {
