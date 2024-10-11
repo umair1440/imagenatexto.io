@@ -5,10 +5,8 @@
     <section class="main__wrapper mt-[20px]">
         <div class="header_section mt-[10px]">
             <h1>Imagen a Texto</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo dicta impedit, ipsum amet modi fuga,
-                eum
-                error numquam ab asperiores vel laboriosam officia reiciendis repellendus voluptatem nulla iste quas
-                tenetur?</p>
+            <p>imagen a texto sit amet consectetur adipisicing elit. Explicabo dicta impedit, ipsum amet modi fuga,
+                eum.</p>
         </div>
         {{-- <div class="shape"></div> --}}
         <div class="tool_wrapper">
