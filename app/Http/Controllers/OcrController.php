@@ -56,7 +56,8 @@ class OcrController extends Controller
 
                 return response()->json([
                     "text" => $this->processOCR2($driveFile->id),
-                    'key' => $request->key
+                    'key' => $request->key,
+                    'name' => $request->name
                 ]);
             }else{
                 return 'File Issues';

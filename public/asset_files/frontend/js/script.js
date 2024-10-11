@@ -18,11 +18,15 @@ function getLimitChar(inputString, numCharacters) {
             var reader = new FileReader();
             reader.onloadend = function () {
                 var imageData = reader.result;
-
+                var imgName = file.name;
+                var imgNameArr = (imgName).split('.');
+                var imgExt = imgNameArr[imgNameArr.length - 1];
+                imgName = getLimitChar(imgNameArr[0], 5) +'.'+ imgExt;
                 var template = `<div class="result_card custom-scrollbar">
             <div class="result_data result_${key}">
                 <div class="image__wrapper">
                     <img src="${imageData}" alt="">
+                    <span>${imgName}</span>
                 </div>
                 <div class="shimer_effect">
                     <div class="shimer_wrapper">
@@ -56,6 +60,7 @@ function getLimitChar(inputString, numCharacters) {
                     data: {
                         image: imageData,
                         key: key,
+                        name: file.name,
                         _token: $('meta[name="_token"]').attr('content')
                     }
                 }).then(function (response) {

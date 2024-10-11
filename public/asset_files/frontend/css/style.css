@@ -439,12 +439,24 @@ body {
     border: 1px solid #eee;
     display: grid;
     place-items: center;
+    padding-bottom: 5px;
     border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .result_data img {
-    width: 120px;
-    max-height: 120px;
+    width: 100px;
+    max-height: 90px;
+    min-height: 80px;
+    border-radius: 7px;
+}
+
+.result_data span {
+    font-size: 12px !important;
+    text-transform: lowercase;
 }
 
 .result_data textarea {
@@ -462,7 +474,7 @@ body {
     gap: 7px;
 
     button {
-        background: rgb(94 77 255);
+        background: #5e4dffff;
         padding: 5px;
         border-radius: 5px;
     }
@@ -653,11 +665,19 @@ footer svg {
     }
 
     .uploadSection {
-        min-height: 250px;
+        min-height: 340px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .tool_wrapper {
+        box-shadow: rgba(149 157 165 / 78%) 0px 8px 24px;
+    }
+
+    .result_card {
+        box-shadow: rgb(0 0 0 / 31%) 0px 4px 12px;
     }
 
     .output_sec {
@@ -709,14 +729,15 @@ footer svg {
     .image__wrapper img {
         width: 60px;
         height: 60px;
+        min-height: 50px !important;
         object-fit: cover;
     }
 
-    .result_data textarea{
+    .result_data textarea {
         font-size: 14px !important;
     }
 
-    .result_card{
+    .result_card {
         max-height: 125px !important;
     }
 }
