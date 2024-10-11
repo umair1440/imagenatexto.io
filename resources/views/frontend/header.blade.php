@@ -15,7 +15,7 @@
 
         <button type="button"
             class="menu_icon inline-flex items-center gap-2  px-2.5 py-2 text-sm font-semibold text-gray-500  hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
-            <img class="w-5 h-5" src=""
+            <img class="w-5 h-5" src="{{ asset('asset_files/frontend/images/nav-icon.svg?v1.0') }}"
                 alt="">
         </button>
         <!-- buttons - end -->

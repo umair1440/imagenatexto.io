@@ -14,7 +14,7 @@
     <link rel="alternate" hreflang="x-default" href="{{ request()->url() }}" />
     <link rel="alternate" hreflang="es" href="{{ request()->url() }}" />
     <meta name="robots" content="noindex , nofollow" />
-    <link rel="stylesheet" href="{{ asset('asset_files/frontend/css/style.css?v2.3.7') }}">
+    <link rel="stylesheet" href="{{ asset('asset_files/frontend/css/style.css?v2.3.8') }}">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 

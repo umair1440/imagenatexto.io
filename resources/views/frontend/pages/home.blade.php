@@ -1,6 +1,6 @@
 @extends('frontend.main')
 @section('content')
- <section class="bg_wrapper"></section>
+    <section class="bg_wrapper"></section>
 
     <section class="main__wrapper mt-[20px]">
         <div class="header_section mt-[10px]">
@@ -22,8 +22,7 @@
                                 PDF</span>
                             <div class="browse_sec">
                                 <button>Browse Files</button>
-                                <button><img width="20px"
-                                        src="{{ asset('asset_files/frontend/images/link-icon.svg') }}"
+                                <button><img width="20px" src="{{ asset('asset_files/frontend/images/link-icon.svg') }}"
                                         alt=""></button>
                             </div>
                         </div>
@@ -54,37 +53,33 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, aliquid! Lorem, ipsum dolor sit amet
                 consectetur adipisicing elit. Ab, dolor! Lorem ipsum dolor sit amet.</p>
         </div>
-        <div class="pt-10 flex gap-x-10">
+        <div class="pt-10 flex gap-x-10 flex-col sm:items-center md:flex-row ">
             <div class="bg-white px-4 py-2 rounded-lg">
-                <img class="max-w-[350px]" src="{{ asset('asset_files/frontend/images/use-case-1.png') }}"
-                    alt="">
-                <img class="max-w-[350px]" src="{{ asset('asset_files/frontend/images/use-case-2.png') }}"
-                    alt="">
-                <img class="max-w-[350px]" src="{{ asset('asset_files/frontend/images/use-case-3.png') }}"
-                    alt="">
-                <img class="max-w-[350px]" src="{{ asset('asset_files/frontend/images/use-case-4.png') }}"
-                    alt="">
+                <img class="max-w-[350px] w-[100%]" src="{{ asset('asset_files/frontend/images/use-case-1.png') }}" alt="">
+                <img class="max-w-[350px] w-[100%]" src="{{ asset('asset_files/frontend/images/use-case-2.png') }}" alt="">
+                <img class="max-w-[350px] w-[100%]" src="{{ asset('asset_files/frontend/images/use-case-3.png') }}" alt="">
+                <img class="max-w-[350px] w-[100%]" src="{{ asset('asset_files/frontend/images/use-case-4.png') }}" alt="">
             </div>
-            <div class="grid grid-cols-2 gap-5 mt-5">
-                <div class="p-5 border-r border-b border-gray-300 rounded-lg bg-white">
+            <div class="grid grid-col-1 lg:grid-cols-2 gap-5 mt-5">
+                <div class="p-5 lg:border-r lg:border-b border-gray-300 rounded-lg bg-white">
                     <h3 class="text-[16px] mb-2 bg-[#5e4dff] w-fit text-white rounded-[100px] px-5 py-1">Upload Files
                     </h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos nobis dolore, consequatur dolor
                         molestiae quis laudantium praesentium impedit veniam iusto?</p>
                 </div>
-                <div class="p-5  border-l border-b border-gray-300 rounded-lg bg-white">
+                <div class="p-5  lg:border-l lg:border-b border-gray-300 rounded-lg bg-white">
                     <h3 class="text-[16px] mb-2 bg-[#5e4dff] w-fit text-white rounded-[100px] px-5 py-1">Click On
                         Convert</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos nobis dolore, consequatur dolor
                         molestiae quis laudantium praesentium impedit veniam iusto?</p>
                 </div>
-                <div class="p-5 border-t border-r border-gray-300 rounded-lg bg-white">
+                <div class="p-5 lg:border-t lg:border-r border-gray-300 rounded-lg bg-white">
                     <h3 class="text-[16px] mb-2 bg-[#5e4dff] w-fit text-white rounded-[100px] px-5 py-1">Optical
                         Recognation Process</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos nobis dolore, consequatur dolor
                         molestiae quis laudantium praesentium impedit veniam iusto?</p>
                 </div>
-                <div class="p-5 border-t border-l border-gray-300 rounded-lg bg-white">
+                <div class="p-5 lg:border-t lg:border-l border-gray-300 rounded-lg bg-white">
                     <h3 class="text-[16px] mb-2 bg-[#5e4dff] w-fit text-white rounded-[100px] px-5 py-1">Result With
                         Options</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos nobis dolore, consequatur dolor
@@ -99,8 +94,8 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, aliquid! Lorem, ipsum dolor sit amet
                 consectetur adipisicing elit. Ab, dolor! Lorem ipsum dolor sit amet.</p>
         </div>
-        <div class="max-w-[70vw] m-auto mt-5">
-            <div class="feature_card bg-white transition  flex gap-x-5 p-2 rounded-lg items-center">
+        <div class=" md:max-w-[70vw] m-auto mt-5">
+            <div class="feature_card bg-white transition flex-col md:flex-row  flex gap-x-5 p-2 rounded-lg items-center">
                 <div>
                     1
                 </div>
@@ -114,7 +109,7 @@
                         sit amet.</p>
                 </div>
             </div>
-            <div class="feature_card bg-white transition  flex gap-x-5 p-2 rounded-lg items-center">
+            <div class="feature_card bg-white transition flex-col md:flex-row  flex gap-x-5 p-2 rounded-lg items-center">
                 <div>
                     2
                 </div>
@@ -128,7 +123,7 @@
                         sit amet.</p>
                 </div>
             </div>
-            <div class="feature_card bg-white transition  flex gap-x-5 p-2 rounded-lg items-center">
+            <div class="feature_card bg-white transition flex-col md:flex-row  flex gap-x-5 p-2 rounded-lg items-center">
                 <div>
                     3
                 </div>
@@ -142,7 +137,7 @@
                         sit amet.</p>
                 </div>
             </div>
-            <div class="feature_card bg-white transition  flex gap-x-5 p-2 rounded-lg items-center">
+            <div class="feature_card bg-white transition flex-col md:flex-row  flex gap-x-5 p-2 rounded-lg items-center">
                 <div>
                     4
                 </div>
@@ -156,7 +151,7 @@
                         sit amet.</p>
                 </div>
             </div>
-            <div class="feature_card bg-white transition  flex gap-x-5 p-2 rounded-lg items-center">
+            <div class="feature_card bg-white transition flex-col md:flex-row  flex gap-x-5 p-2 rounded-lg items-center">
                 <div>
                     5
                 </div>
@@ -179,7 +174,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, aliquid! Lorem, ipsum dolor sit amet
                 consectetur adipisicing elit. Ab, dolor! Lorem ipsum dolor sit amet.</p>
         </div>
-        <div class="grid grid-cols-3 gap-5 mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
             <div class="uses_card flex flex-col gap-1 bg-white rounded-lg p-5">
                 <h3>Data extraction:</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque, tenetur minima quo numquam
@@ -277,7 +272,7 @@
                 consectetur adipisicing elit. Ab, dolor! Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="why">
-            <table>
+            <table class=" w-[100%] md:w-[70%]">
                 <tbody>
                     <tr>
                         <td>🖼️
@@ -324,8 +319,8 @@
                 consectetur adipisicing elit. Ab, dolor! Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="pt-10 flex gap-x-10 flex-col">
-            <div class="px-4 py-2 rounded-lg">
-                <ul class="grid grid-cols-2 gap-5 mt-5 where__cards">
+            <div class="md:px-4 py-2 rounded-lg">
+                <ul class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-5 where__cards">
                     <li class="p-5 border-gray-300 rounded-lg bg-white">
                         <h3 class="text-[16px] mb-2 bg-[#5e4dff] w-fit text-center text-white rounded-[7px] px-5 py-1">
                             Digitize
@@ -426,10 +421,10 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, aliquid! Lorem, ipsum dolor sit amet
                 consectetur adipisicing elit. Ab, dolor! Lorem ipsum dolor sit amet.</p>
         </div>
-        <div class="relative w-full sm:rounded-lg sm:px-10 ">
-            <div class="mx-auto px-5">
+        <div class="relative w-full sm:rounded-lg px-0 md:px-10 ">
+            <div class="mx-auto md:px-5">
                 <div
-                    class="mx-auto mt-8 grid max-w-[900px] bg-white px-10 py-5 w-[90%] divide-y divide-neutral-200 faq_card">
+                    class="mx-auto mt-8 grid max-w-[900px] bg-white px-5 md:px-10 py-5 w-[90%] divide-y divide-neutral-200 faq_card">
                     <div class="py-5">
                         <details class="group">
                             <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
