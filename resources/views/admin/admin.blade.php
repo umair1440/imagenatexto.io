@@ -61,7 +61,7 @@
     <script src="{{ asset('asset_files/admin/js/validate.js') }}"></script>
     <script src="{{ asset('asset_files/admin/js/dashboard.js?v1.4') }}
                             "></script>
-    <script src="{{ asset('asset_files/admin/js/admin.js?v1.6') }}
+    <script src="{{ asset('asset_files/admin/js/admin.js?v1.7') }}
                             "></script>
 
 </body>

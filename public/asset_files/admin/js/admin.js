@@ -30,7 +30,7 @@ $("#add__content__row").on('click', function () {
 
     var section = $(".content__tags");
     var sectionType;
-    switch ($('#content__row__type').val()) {
+    switch ($("input[type=radio]:checked").val()) {
         case 'input':
             sectionType = input;
             break;
