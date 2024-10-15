@@ -14,18 +14,21 @@
                 <div class="input_sec expand_input">
                     <label for="uploadFile" class="uploadSection">
                         <div class="upload_label">
-                            <img src="{{ asset('asset_files/frontend/images/upload-icon.svg?v1.0') }}" alt="">
+                            <img src="{{ asset('asset_files/frontend/images/upload-icon.svg?v1.1') }}" alt="">
                             <span
                                 class="drop_text">{{ @$content['drop_text']['value'] ?? 'Drop, Upload or Paste image' }}</span>
                             <span
                                 class="supported_files_text">{{ @$content['support_files']['value'] ?? 'Supported formates: JPG, PNG, GIF, JFIF (JPEG), HEIC, PDF' }}</span>
                             <div class="browse_sec">
-                                <button>{{ @$content['browse_files']['value'] ?? 'Browse Files' }}</button>
+                                <button class="flex gap-2 items-center" id="browse_files">
+                                    <img width="18px" src="{{ asset('asset_files/frontend/images/upload-icon.svg') }}" alt="">
+                                    {{ @$content['browse_files']['value'] ?? 'Browse Files' }}
+                                </button>
                                 <button><img width="20px" src="{{ asset('asset_files/frontend/images/link-icon.svg') }}"
                                         alt=""></button>
                             </div>
                         </div>
-                        <input type="file" accept=".jpg, .png, .jpeg, .svg" multiple name="file" hidden
+                        <input type="file" accept=".jpg, .png, .jpeg" multiple name="file" hidden
                             id="uploadFile">
                     </label>
                 </div>

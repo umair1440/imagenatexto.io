@@ -136,4 +136,4 @@
         <div class="py-8 text-center text-sm text-gray-400">© 2024 - image to text</div>
     </footer>
 </div>
-<script src="{{ asset('asset_files/frontend/js/script.js?v1.6') }}"></script>
+<script src="{{ asset('asset_files/frontend/js/script.js?v1.6.1') }}"></script>

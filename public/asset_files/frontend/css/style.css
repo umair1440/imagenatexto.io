@@ -28,6 +28,7 @@ p {
 
 body {
     position: relative;
+    background-color: #f9f9ffc9;
 }
 
 .bg_wrapper {
@@ -107,6 +108,14 @@ body {
 .tool>div {
     transition: 0.3s ease;
 }
+
+.upload_label{
+    transition: 0.3s ease;
+}
+.droppingFile {
+    background-color: #e8e7ff;
+}
+
 
 .upload_label {
     height: 100%;
